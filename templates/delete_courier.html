@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-container">
+
+<h2>Delete Courier</h2>
+
+<form method="POST">
+
+<input
+type="text"
+name="tracking_id"
+placeholder="Tracking ID"
+required>
+
+<button type="submit">
+
+Delete Courier
+
+</button>
+
+</form>
+
+<h3>{{ message }}</h3>
+
+</div>
+
+{% endblock %}

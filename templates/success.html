@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h2>Courier Added Successfully!</h2>
+
+    <h3>Your Tracking ID</h3>
+
+    <h1 style="color:green;">
+        {{ tracking_id }}
+    </h1>
+
+    <br>
+
+    <a href="/admin_dashboard" class="btn">
+        Back to Dashboard
+    </a>
+
+</div>
+
+{% endblock %}

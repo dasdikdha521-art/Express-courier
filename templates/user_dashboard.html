@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="sidebar">
+    <h2>User Panel</h2>
+    <a href="{{ url_for('user_dashboard') }}">🏠 Dashboard</a>
+
+<a href="{{ url_for('track') }}">📦 Track Courier</a>
+
+<a href="{{ url_for('view_couriers') }}">🚚 My Couriers</a>
+
+<a href="#">👤 Profile</a>
+
+<a href="{{ url_for('home') }}">🚪 Logout</a>
+</div>
+
+<div class="main">
+
+    <h1>Welcome User 👋</h1>
+
+    <!-- Stats -->
+    <div class="cards">
+        <div class="card">
+            <h3>Active Couriers</h3>
+            <p>{{ total }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Delivered</h3>
+            <p>{{ delivered }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p>{{ transit }}</p>
+        </div>
+    </div>
+
+    <!-- Track Courier -->
+    <div class="section">
+        <h2>Track Courier</h2>
+        <input type="text" placeholder="Enter Tracking ID">
+        <button>Track</button>
+    </div>
+
+    <!-- My Couriers -->
+    <div class="section">
+        <h2>My Couriers</h2>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Receiver</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+
+            {% for courier in couriers %}
+            <tr>
+                <td>{{ courier[0] }}</td> <!-- Tracking ID -->
+                <td>{{ courier[5] }}</td>   <!-- Receiver Name -->
+                <td>{{ courier[13] }}</td>  <!-- Status -->
+                <td>{{ courier[1] }}</td>   <!-- Booking Date -->
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}

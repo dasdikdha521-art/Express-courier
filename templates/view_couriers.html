@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+View Couriers
+
+{% endblock %}
+
+{% block content %}
+
+<h2 style="text-align:center;">All Courier Records</h2>
+
+<table border="1" cellpadding="10" cellspacing="0" style="margin:auto;">
+
+<tr>
+
+<th>Tracking ID</th>
+<th>Sender</th>
+<th>Receiver</th>
+<th>Weight</th>
+<th>Status</th>
+
+</tr>
+
+{% for courier in couriers %}
+
+<tr>
+
+<td>{{ courier[0] }}</td>
+<td>{{ courier[2] }}</td>
+<td>{{ courier[5] }}</td>
+<td>{{ courier[8] }} kg</td>
+<td>{{ courier[13] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

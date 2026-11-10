@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="form-container">
+
+<h2>Update Courier Status</h2>
+
+<form method="POST">
+
+<input
+type="text"
+name="tracking_id"
+placeholder="Tracking ID"
+required>
+
+<select name="status">
+
+<option>Booked</option>
+
+<option>Picked Up</option>
+
+<option>At Warehouse</option>
+
+<option>In Transit</option>
+
+<option>Out for Delivery</option>
+
+<option>Delivered</option>
+
+<option>Cancelled</option>
+
+</select>
+
+<button type="submit">
+
+Update Status
+
+</button>
+
+</form>
+
+<h3>{{ message }}</h3>
+
+</div>
+
+{% endblock %}

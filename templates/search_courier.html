@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Search Courier{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+<h2>Search Courier</h2>
+
+<form method="POST">
+
+<input
+type="text"
+name="tracking_id"
+placeholder="Enter Tracking ID"
+required>
+
+<button type="submit">
+
+Search
+
+</button>
+
+</form>
+
+</div>
+
+{% if courier %}
+
+<div class="form-container">
+
+<h3>Courier Details</h3>
+
+<p><strong>Tracking ID:</strong> {{ courier[0] }}</p>
+<p><strong>Sender:</strong> {{ courier[2] }}</p>
+<p><strong>Receiver:</strong> {{ courier[5] }}</p>
+<p><strong>Weight:</strong> {{ courier[8] }} kg</p>
+<p><strong>Status:</strong> {{ courier[13] }}</p>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
