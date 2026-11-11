@@ -1,0 +1,37 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Flask instance and local configuration
+instance/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test cache
+.pytest_cache/
+
+# Private or generated data
+private_data/
+backups/
